@@ -2,7 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
+
+
     <script src="js/jquery-3.3.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
@@ -10,7 +13,49 @@
   </head>
   <body>
     <div class="container">
+      <form id=booking>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter Full Name">
+        </div>
+        <div class="form-group">
+          <label for="reason">Reason for Appointment:</label>
+          <input type="text" class="form-control" id="reason" placeholder="Please give a brief description of why you would like to make an appointment.">
+        </div>
+        <div class="form-group">
+          <label for="date">Choose Date of Appointment:</label>
+          <input type="date" id="datePicker" >
+        </div>
+        <div class="form-group">
+          <label for="start">Choose Start Time of Appointment:</label>
+          <input type="time" id="timeStart">
+        </div>
+        <div class="form-group">
+          <label for="end">Choose End Time of Appointment:</label>
+          <input type="time" id="timeEnd">
+        </div>
+        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Submit</button>
+      </form>
 
+
+      <div class="modal" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Congratulations <span id="user"></span>!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Your booking for <span id="dateTime"></span> is complete!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
